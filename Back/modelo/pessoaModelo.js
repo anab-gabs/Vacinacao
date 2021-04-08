@@ -39,17 +39,7 @@ emailPessoa: {
 
 },
 
-_Unidade:{
-    type: mongoose.Schema.Types.ObjectId,
-    ref:'UnidadeSaUde',
-   
 
-},
-_Agendamento:{
-    type: mongoose.Schema.Types.ObjectId,
-    ref:'Agendamento',
-
-},
 creatAt: { 
     type: Date,
     default: Date.now

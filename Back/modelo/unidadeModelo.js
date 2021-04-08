@@ -33,22 +33,7 @@ LatLongUnidade: {
     required: true
 
 },
-Pessoas: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref:'Pessoa',
-   
-}
-]
 
-,
-Agendamentos: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref:'Agendamento',
-    
-}
-]
-
-,
 
 creatAt: { 
     type: Date,

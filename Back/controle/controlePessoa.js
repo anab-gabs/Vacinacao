@@ -11,9 +11,8 @@ async function cadastrar(req,res){
         TelPessoa: req.body.TelPessoa,
         grupo_Prio_Pessoa:req.body.grupo_Prio_Pessoa,
         EnderecoPessoa:  req.body.EnderecoPessoa,
-        emailPessoa: req.body.emailPessoa,
-        _Unidade:req.body._Unidade,
-        _Agendamento:req.body._Agendamento
+        emailPessoa: req.body.emailPessoa
+       
     }).save();
     res.send("Pessoa cadastrada com sucesso!")
 
@@ -28,7 +27,7 @@ async function ler(req,res){
             res.status(200).json({dados})
         }
 
-    }).populate('_Unidade').populate('_Agendamento')
+    })
     
     
    

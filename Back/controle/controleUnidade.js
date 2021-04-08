@@ -12,9 +12,8 @@ async function cadastrar(req,res){
         enderecoUnidade: req.body.enderecoUnidade,
         TelUnidade: req.body.TelUnidade,
         emailUnidade:req.body.emailUnidade,
-        LatLongUnidade:  req.body.LatLongUnidade,
-        Pessoas:req.body.Pessoas,
-        Agendamentos: req.body.Agendamentos
+        LatLongUnidade:  req.body.LatLongUnidade
+       
     }).save().then(()=>{
 
         res.send("Unidade cadastrada com sucesso!")
@@ -34,7 +33,7 @@ async function ler(req,res){
             res.status(200).json({dados})
         }
 
-    }).populate('Pessoas').populate('Agendamentos');
+    })
 
    
     
