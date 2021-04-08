@@ -1,11 +1,21 @@
 
 
 const Agendamento = require("../modelo/Agendamento");
+const unidade = require("../modelo/unidadeModelo")
+const pessoa = require("../modelo/pessoaModelo")
+
 
 async function cadastrar(req,res){ 
-    
+
+//    const Unid= req.params.Unid
+//    const pid= req.params.pid
+   const findUnidade =await unidade.findById({_id:req.body._Unidade})
+   const findpid =await pessoa.findById({_id:req.body.Pessoas})
+
+
     const agendamento = new Agendamento ({
-        
+     
+
         dt_hora_agendamento: req.body.dt_hora_agendamento,
         necessidadeEsp_agendamento: req.body.necessidadeEsp_agendamento,
         Obs_agendamento: req.body.Obs_agendamento,
@@ -15,7 +25,8 @@ async function cadastrar(req,res){
     }).save().then(()=>{
 
         res.send("Agendamento cadastrado com sucesso!")
-    }).catch(()=>{
+    }).catch((err)=>{
+        console.log(err)
         res.send("Erro Ao tentar cadastrar o agendamento!")
     })
    
