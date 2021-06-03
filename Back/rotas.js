@@ -8,20 +8,20 @@ const rotas = express.Router();
 rotas.post('/cadastrar',pessoa.cadastrar);
 rotas.get('/ler',pessoa.ler);
 rotas.delete('/excluir/:cpf',pessoa.excluir);
-rotas.get('/ler/:cpf',pessoa.lerUm);
-rotas.put('/pessoa/:cpf',pessoa.Atualizar);
+rotas.get('/lerUm/:cpf',pessoa.lerUm);
+rotas.put('/atualizar/:cpf',pessoa.Atualizar);
 
-rotas.post('/unidade/cadastrar',unidade.cadastrar);
-rotas.get('/unidade/ler',unidade.ler);
-rotas.delete('/unidade/excluir/:id',unidade.excluir);
-rotas.get('/unidade/ler/:id',unidade.lerUm);
-rotas.put('/unidade/atualizar/:id',unidade.Atualizar);
+rotas.post('/cadastrarUnidade',unidade.cadastrar);
+rotas.get('/lerUnidade',unidade.ler);
+rotas.delete('/excluirUnidade/:id',unidade.excluir);
+rotas.get('/listarUnidade/:id',unidade.lerUm);
+rotas.put('/atualizarUnidade/:id',unidade.Atualizar);
 
 
-rotas.post('/agendamento/cadastrar',agendamento.cadastrar);
-rotas.get('/agendamento/ler',agendamento.ler);
-rotas.delete('/agendamento/excluir/:id',agendamento.excluir);
-rotas.get('/agendamento/ler/:id',agendamento.lerUm);
-rotas.put('/agendamento/atualizar/:id',agendamento.Atualizar);
+rotas.post('/CadastrarAtendimento',agendamento.cadastrar);
+rotas.get('/lerAgendamentos',agendamento.ler);
+rotas.delete('/excluirAgendamento/:id',agendamento.excluir);
+rotas.get('/listarAgendamento/:id',agendamento.lerUm);
+rotas.put('/atualizarAgendamento/:id',agendamento.Atualizar);
 
 module.exports = rotas;

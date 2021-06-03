@@ -7,8 +7,7 @@ const pessoa = require("../modelo/pessoaModelo")
 
 async function cadastrar(req,res){ 
 
-//    const Unid= req.params.Unid
-//    const pid= req.params.pid
+
    const findUnidade =await unidade.findById({_id:req.body._Unidade})
    const findpid =await pessoa.findById({_id:req.body.Pessoas})
 
@@ -58,7 +57,6 @@ async function ler(req,res){
             res.status(200).json({dados})
         }
     });
-    // res.status(201).send("Unidade deletada com sucesso!!")
    
 };
 
